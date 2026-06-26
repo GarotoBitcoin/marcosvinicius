@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melhores Restaurantes 2026 Perto de mim - Restaurant Guru</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #222; background: #f5f5f5; line-height: 1.5; }
+  a { color: #e64545; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  header { background: #fff; border-bottom: 1px solid #e6e6e6; position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 20px; }
+  .logo { font-size: 22px; font-weight: 700; color: #e64545; }
+  .logo span { color: #222; }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 16px; font-size: 14px; }
+  .nav-right a { color: #555; }
+  .lang-switch { position: relative; cursor: pointer; padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; }
+  .lang-switch:hover .lang-menu { display: block; }
+  .lang-menu { display: none; position: absolute; top: 100%; right: 0; background: #fff; border: 1px solid #ddd; border-radius: 4px; min-width: 140px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 200; }
+  .lang-menu a { display: block; padding: 8px 12px; color: #333; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+  .lang-menu a:hover { background: #fafafa; }
+  .btn-login { background: #e64545; color: #fff !important; padding: 8px 16px; border-radius: 4px; font-weight: 600; }
+
+  /* Search hero */
+  .hero { background: linear-gradient(135deg, #e64545 0%, #c83737 100%); color: #fff; padding: 60px 20px 70px; text-align: center; }
+  .hero h1 { font-size: 36px; max-width: 900px; margin: 0 auto 18px; font-weight: 700; }
+  .hero p { max-width: 850px; margin: 0 auto 28px; font-size: 15px; opacity: 0.95; }
+  .search-box { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 8px; display: flex; gap: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+  .search-box input { flex: 1; border: 0; padding: 12px 14px; font-size: 15px; color: #333; outline: none; border-right: 1px solid #eee; }
+  .search-box input:last-of-type { border-right: 0; }
+  .search-box button { background: #e64545; color: #fff; border: 0; padding: 0 24px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 15px; }
+
+  /* Sections */
+  main { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+  section { margin-bottom: 50px; }
+  .section-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #222; }
+  .section-title a { color: #222; }
+  .section-title a:hover { color: #e64545; }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+  /* Card */
+  .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s, box-shadow 0.15s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+  .card-img { width: 100%; height: 150px; object-fit: cover; background: #eee; }
+  .card-body { padding: 14px; }
+  .card-title { font-size: 14px; font-weight: 600; color: #222; line-height: 1.35; margin-bottom: 6px; }
+  .card-author { font-size: 12px; color: #888; }
+
+  /* Award gallery */
+  .awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .award { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; }
+  .award-img { width: 100%; height: 160px; object-fit: cover; background: #eee; }
+  .award-body { padding: 14px; }
+  .award-badge { display: inline-block; background: #fef3c7; color: #92400e; padding: 3px 8px; font-size: 11px; font-weight: 600; border-radius: 3px; margin-bottom: 8px; }
+  .award-loc { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .award-name { font-size: 14px; font-weight: 600; }
+  .award-name a { color: #222; }
+  .award-name a:hover { color: #e64545; }
+
+  /* Media */
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .media-item { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .media-source { font-size: 12px; color: #888; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .media-title { font-size: 14px; color: #222; font-weight: 500; }
+  .media-item a { color: inherit; }
+  .media-item:hover .media-title { color: #e64545; }
+
+  /* Near me lists */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .near-me-list { list-style: none; columns: 2; column-gap: 20px; }
+  .near-me-list li { break-inside: avoid; margin-bottom: 10px; font-size: 14px; }
+  .near-me-list li a { color: #333; display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+  .near-me-list li a:hover { color: #e64545; }
+  .dish-icon { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; background: #eee; }
+
+  /* Footer */
+  footer { background: #2b2b2b; color: #ccc; padding: 40px 20px 20px; margin-top: 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 30px; }
+  .footer-col h4 { color: #fff; font-size: 14px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 8px; font-size: 13px; }
+  .footer-col a { color: #ccc; }
+  .footer-col a:hover { color: #fff; }
+  .app-badges { display: flex; gap: 10px; margin-top: 10px; }
+  .app-badge { background: #000; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 11px; display: inline-flex; align-items: center; gap: 8px; }
+  .app-badge:hover { background: #111; text-decoration: none; }
+  .countries { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 14px 0 24px; }
+  .countries a { color: #aaa; font-size: 12px; }
+  .countries a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid #444; padding-top: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; font-size: 12px; color: #888; }
+  .footer-bottom-links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .footer-bottom-links a { color: #aaa; }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 26px; }
+    .search-box { flex-direction: column; }
+    .search-box input { border-right: 0; border-bottom: 1px solid #eee; }
+    .near-me-list { columns: 1; }
+    .two-col { grid-template-columns: 1fr; }
+    .nav-right .nav-link { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="https://restaurantguru.com.br/" class="logo">Restaurant<span>Guru</span></a>
+    <div class="nav-right">
+      <a class="nav-link" href="https://restaurantguru.com.br/businessLanding">Para negócios</a>
+      <div class="lang-switch">
+        PT ▾
+        <div class="lang-menu">
+          <a href="https://restaurantguru.com/">English</a>
+          <a href="https://es.restaurantguru.com/">Español</a>
+          <a href="https://ru.restaurantguru.com/">Русский</a>
+          <a href="https://fr.restaurantguru.com/">Français</a>
+          <a href="https://restaurantguru.it/">Italiano</a>
+          <a href="https://de.restaurantguru.com/">Deutsch</a>
+          <a href="https://nl.restaurantguru.com/">Nederlands</a>
+          <a href="https://pl.restaurantguru.com/">Polski</a>
+          <a href="https://tr.restaurantguru.com/">Türkçe</a>
+          <a href="https://ar.restaurantguru.com/">عربي</a>
+          <a href="https://ja.restaurantguru.com/">日本語</a>
+        </div>
+      </div>
+      <a class="btn-login" href="https://restaurantguru.com.br/">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Os melhores restaurantes do mundo perto de você</h1>
+  <p>Se você está procurando uma refeição saborosa, o Restaurant Guru ajuda a encontrar os melhores restaurantes, cafés e bares ao seu redor. Descubra comentários, avaliações e classificações em um só lugar.</p>
+  <form class="search-box" action="https://restaurantguru.com.br/" method="get" target="_blank">
+    <input type="text" placeholder="Onde: cidade, bairro..." name="where">
+    <input type="text" placeholder="Encontrar: restaurante, prato..." name="find">
+    <button type="submit">Pesquisar</button>
+  </form>
+</section>
+
+<main>
+
+  <section>
+    <h2 class="section-title"><a href="https://restaurantguru.com.br/guides">Guias de comida para viajantes</a></h2>
+    <div class="grid-3">
+      <a class="card" href="https://restaurantguru.com/guides/alexandrias-culinary-scene-top-4-restaurants-in-egypts-gem">
+        <div class="card-img" style="background:linear-gradient(135deg,#f6c177,#e87a5d);"></div>
+        <div class="card-body">
+          <div class="card-title">Alexandria's culinary scene: Top 4 restaurants in Egypt's gem</div>
+          <div class="card-author">Anne Shirley</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/guides/let-your-trip-to-cairo-be-full-of-amazing-adventures-foods">
+        <div class="card-img" style="background:linear-gradient(135deg,#90b8d6,#3f6e9a);"></div>
+        <div class="card-body">
+          <div class="card-title">Let your trip to Cairo be full of amazing adventures & foods</div>
+          <div class="card-author">Anne Shirley</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/guides/interesting-things-to-eat-in-cairo-egypt">
+        <div class="card-img" style="background:linear-gradient(135deg,#d4a76a,#8b5a2b);"></div>
+        <div class="card-body">
+          <div class="card-title">Interesting things to eat in Cairo, Egypt</div>
+          <div class="card-author">George Black</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/guides/top-picks-for-thrilling-adventures-and-dining-in-cairo-egypt">
+        <div class="card-img" style="background:linear-gradient(135deg,#c1a3d4,#7a5599);"></div>
+        <div class="card-body">
+          <div class="card-title">Top picks for thrilling adventures and dining in Cairo, Egypt</div>
+          <div class="card-author">Olivia Bell</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/guides/what-to-do-in-paphos-cyprus-best-sights-restaurants">
+        <div class="card-img" style="background:linear-gradient(135deg,#7ec5c0,#3a7a78);"></div>
+        <div class="card-body">
+          <div class="card-title">What to do in Paphos, Cyprus: best sights & restaurants</div>
+          <div class="card-author">Nona Vesele</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><a href="https://restaurantguru.com.br/recipes">Receitas</a></h2>
+    <div class="grid-3">
+      <a class="card" href="https://restaurantguru.com/recipes/salmon-tartare-with-cured-yolk-a-spanish-specialty">
+        <div class="card-img" style="background:linear-gradient(135deg,#ff9a76,#e85d5d);"></div>
+        <div class="card-body">
+          <div class="card-title">Salmon tartare with cured yolk – a Spanish specialty</div>
+          <div class="card-author">Olivia Bell</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/recipes/vegan-cookies-with-chocolate-chips-and-oreo">
+        <div class="card-img" style="background:linear-gradient(135deg,#8b5a2b,#3e2a14);"></div>
+        <div class="card-body">
+          <div class="card-title">Vegan cookies with chocolate chips and Oreo</div>
+          <div class="card-author">Olivia Bell</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/recipes/lentils-coconut-green-curry-stew-for-veggie-lovers">
+        <div class="card-img" style="background:linear-gradient(135deg,#a8d18a,#4f7c3b);"></div>
+        <div class="card-body">
+          <div class="card-title">Lentils coconut green curry stew for veggie lovers</div>
+          <div class="card-author">Olivia Bell</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/recipes/vermouth-cocktail-with-orange-peel-and-maraschino-cherries">
+        <div class="card-img" style="background:linear-gradient(135deg,#f4a261,#c44545);"></div>
+        <div class="card-body">
+          <div class="card-title">Vermouth cocktail with orange peel and maraschino cherries</div>
+          <div class="card-author">Olivia Bell</div>
+        </div>
+      </a>
+      <a class="card" href="https://restaurantguru.com/recipes/biryani-not-as-difficult-as-it-might-seem-in-london-uk">
+        <div class="card-img" style="background:linear-gradient(135deg,#e8b04a,#a8651e);"></div>
+        <div class="card-body">
+          <div class="card-title">Biryani: not as difficult as it might seem in London, UK</div>
+          <div class="card-author">Anne Shirley</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><a href="https://restaurantguru.com.br/award-gallery">Galeria de prêmios do Restaurant Guru</a></h2>
+    <div class="awards">
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/TUFTVEVSLVNVU0hJLVViZXJhYmE_preview.jpg" alt="Restaurante Ging" onerror="this.style.background='linear-gradient(135deg,#ffa07a,#cd5c5c)';this.style.display='block';this.src='';">
+        <div class="award-body">
+          <span class="award-badge">Melhor sushi</span>
+          <div class="award-loc">em Uberaba, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/MASTER-SUSHI-Uberaba">Restaurante Ging</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/U3VwcmVtYS1QaXp6YS1DaW5lLVNhby1QYXVsbw_preview.jpg" alt="PIZZACINE">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em São Paulo, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Suprema-Pizza-Cine-Sao-Paulo">PIZZACINE - Pizzaria e Delivery</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/Q29uZmV0LURvY2VyaWEtUG9ydG8tU2VndXJvLTI_preview.jpg" alt="Confet Doceria">
+        <div class="award-body">
+          <span class="award-badge">Melhor café</span>
+          <div class="award-loc">em Porto Seguro, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Confet-Doceria-Porto-Seguro-2">Confet Doceria & Cafeteria</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/Q2FudGluaG8tZG8tUGFyYS1SaW8tZGUtSmFuZWlyby00_preview.jpg" alt="Cantinho do Pará">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em Rio de Janeiro, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Cantinho-do-Para-Rio-de-Janeiro-4">Cantinho do Pará</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/TWFrdHViLUZhc3QtRm9vZC1BcmFiZS1Kb2FvLVBlc3NvYQ_preview.jpg" alt="Maktub">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em João Pessoa, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Maktub-Fast-Food-Arabe-Joao-Pessoa">Maktub Comida árabe artesanal</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/UHViLU11c2ljLUJlZXItUm9jay1DbHViLU1hbmF1cw_preview.jpg" alt="Pub Music Beer">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em Manaus, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Pub-Music-Beer-Rock-Club-Manaus">Pub Music Beer Rock Club</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/QnJlYWQtUGFyYWRpc2UtQnJhc2lsaWEtMw_preview.jpg" alt="Paraíso do Pão">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em Brasília, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/Bread-Paradise-Brasilia-3">Paraíso do Pão</a></div>
+        </div>
+      </div>
+      <div class="award">
+        <img class="award-img" src="https://1014042311.rsc.cdn77.org/img/certificates/preview/TmFCcmFzYS1OaXRlcm9p_preview.jpg" alt="Nabrasa">
+        <div class="award-body">
+          <span class="award-badge">Recomendado</span>
+          <div class="award-loc">em Niterói, Brasil</div>
+          <div class="award-name"><a href="https://restaurantguru.com.br/NaBrasa-Niteroi">Nabrasa Oro Camboinhas</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><a href="https://restaurantguru.com.br/mass_media_about_us">Destaques da mídia</a></h2>
+    <div class="media-grid">
+      <a class="media-item" href="https://restaurantguru.com.br/mass_media_about_us#thewestmorlandgazette">
+        <div class="media-source">The Westmorland Gazette</div>
+        <div class="media-title">Waterside Café named Best in Kendal by Restaurant Guru</div>
+      </a>
+      <a class="media-item" href="https://restaurantguru.com.br/mass_media_about_us#warwickshireworld">
+        <div class="media-source">Warwickshire World</div>
+        <div class="media-title">Warwick community book cafe named in the Top 10 cafés and restaurants in the town</div>
+      </a>
+      <a class="media-item" href="https://restaurantguru.com.br/mass_media_about_us#tenbytoday">
+        <div class="media-source">Tenby Today</div>
+        <div class="media-title">Tap and Tân in Tenby enjoy 'Number One' accolades</div>
+      </a>
+      <a class="media-item" href="https://restaurantguru.com.br/mass_media_about_us#argus">
+        <div class="media-source">Argus</div>
+        <div class="media-title">Monmouth Indian restaurant perfect for an Easter curry</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div>
+      <h2 class="section-title">Restaurantes perto de mim</h2>
+      <ul class="near-me-list">
+        <li><a href="https://restaurantguru.com.br/pub-and-bar-near-me">Pubs & Bares perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/fast-food-near-me">Fast food perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/bbq-near-me">BBQs perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/steakhouse-near-me">Churrascarias perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/chinese-food-near-me">Comida chinesa perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/thai-food-near-me">Comida tailandesa perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/vietnamese-food-near-me">Comida vietnamita perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/mexican-food-near-me">Comida mexicana perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/asian-food-near-me">Comida asiática perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/indian-restaurants-near-me">Restaurantes indianos perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/italian-restaurants-near-me">Restaurantes italianos perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/seafood-restaurants-near-me">Frutos do mar perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/korean-restaurants-near-me">Restaurantes coreanos perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/japanese-restaurants-near-me">Restaurantes japoneses perto de mim</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="section-title">Comida e bebida perto de mim</h2>
+      <ul class="near-me-list">
+        <li><a href="https://restaurantguru.com.br/pizza-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/2.jpg" alt=""> Pizza perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/sushi-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/27.jpg" alt=""> Sushi perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/burgers-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/3.jpg" alt=""> Búrgueres perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/coffee-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/5713.jpg" alt=""> Café perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/salads-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/6528.jpg" alt=""> Saladas perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/sandwiches-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/6520.jpg" alt=""> Sanduíches perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/fried-chicken-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/72.jpg" alt=""> Frango frito perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/soup-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/12.jpg" alt=""> Sopa perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/fish-and-chips-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/6592.jpg" alt=""> Peixe e fritas perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/desserts-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9.jpg" alt=""> Sobremesas perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/breakfast-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9619.jpg" alt=""> Café da manhã perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/brunch-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9632.jpg" alt=""> Brunch perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/lunch-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9622.jpg" alt=""> Almoço perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/dinner-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9623.jpg" alt=""> Jantar perto de mim</a></li>
+        <li><a href="https://restaurantguru.com.br/food-delivery-near-me"><img class="dish-icon" src="https://img02.restaurantguru.com/meals/small/w26/h26/9631.jpg" alt=""> Entrega de alimentos perto de mim</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Encontrar</h4>
+        <ul>
+          <li><a href="https://restaurantguru.com.br/best-restaurants-nearby-b">Você também pode gostar</a></li>
+          <li><a href="https://restaurantguru.com.br#pierre_assist__activate">Assistente Pierre</a></li>
+          <li><a href="https://restaurantguru.com/tutorial">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Para negócios</h4>
+        <ul>
+          <li><a href="https://restaurantguru.com.br/businessLanding">Para proprietários de restaurantes</a></li>
+          <li><a href="https://restaurantguru.com.br/request_content_removal">Solicitar remoção de conteúdo</a></li>
+          <li><a href="https://admin.restaurantguru.com/">Colaboração</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Aplicativo</h4>
+        <div class="app-badges">
+          <a class="app-badge" href="https://play.google.com/store/apps/details?id=restaurant.guru">▶ Google Play</a>
+          <a class="app-badge" href="https://restaurantadvisor.app/api/v1/app">🍎 App Store</a>
+        </div>
+      </div>
+    </div>
+
+    <h4 style="color:#fff;font-size:13px;margin-bottom:8px;text-transform:uppercase;">Versões por país</h4>
+    <div class="countries">
+      <a href="https://restaurantguru.com/">Internacional</a>
+      <a href="https://es.restaurantguru.com/">Espanha</a>
+      <a href="https://fr.restaurantguru.com/">França</a>
+      <a href="https://de.restaurantguru.com/">Alemanha</a>
+      <a href="https://restaurantguru.it/">Italia</a>
+      <a href="https://pt.restaurantguru.com/">Portugal</a>
+      <a href="https://restaurantguru.ru/">Russia</a>
+      <a href="https://restaurantguru.com.br/">Brasil</a>
+      <a href="https://restaurant-guru.in/">India</a>
+      <a href="https://nl.restaurantguru.com/">Países Baixos</a>
+      <a href="https://pl.restaurantguru.com/">Polônia</a>
+      <a href="https://tr.restaurantguru.com/">Turquia</a>
+      <a href="https://ja.restaurantguru.com/">Japão</a>
+      <a href="https://ar.restaurantguru.com/">Árabe</a>
+    </div>
+
+    <h4 style="color:#fff;font-size:13px;margin-bottom:8px;text-transform:uppercase;">Descubra restaurantes ao redor do mundo</h4>
+    <div class="countries">
+      <a href="https://restaurantguru.com/Germany">Alemanha</a>
+      <a href="https://restaurantguru.com/Saudi-Arabia">Arábia Saudita</a>
+      <a href="https://restaurantguru.com/Argentina">Argentina</a>
+      <a href="https://restaurantguru.com/Australia">Australia</a>
+      <a href="https://restaurantguru.com.br">Brasil</a>
+      <a href="https://restaurantguru.com/Canada">Canada</a>
+      <a href="https://restaurantguru.com/Czech-Republic">Chéquia</a>
+      <a href="https://restaurantguru.com/Colombia">Colombia</a>
+      <a href="https://restaurantguru.com/South-Korea">Coreia do Sul</a>
+      <a href="https://restaurantguru.com/Egypt">Egito</a>
+      <a href="https://restaurantguru.com/Spain">Espanha</a>
+      <a href="https://restaurantguru.com/United-States">Estados Unidos</a>
+      <a href="https://restaurantguru.com/Philippines">Filipinas</a>
+      <a href="https://restaurantguru.com/France">França</a>
+      <a href="https://restaurantguru.com/Greece">Grecia</a>
+      <a href="https://restaurant-guru.in">India</a>
+      <a href="https://restaurantguru.com/Indonesia">Indonesia</a>
+      <a href="https://restaurantguru.com/Italy">Italia</a>
+      <a href="https://restaurantguru.com/Japan">Japão</a>
+      <a href="https://restaurantguru.com/Malaysia">Malasia</a>
+      <a href="https://restaurantguru.com/Mexico">Mexico</a>
+      <a href="https://restaurantguru.com/Peru">Peru</a>
+      <a href="https://restaurantguru.com/Poland">Polonia</a>
+      <a href="https://pt.restaurantguru.com/Portugal">Portugal</a>
+      <a href="https://restaurantguru.com/United-Kingdom">Reino Unido</a>
+      <a href="https://restaurantguru.com/Russia">Russia</a>
+      <a href="https://restaurantguru.com/Thailand">Tailandia</a>
+      <a href="https://restaurantguru.com/Taiwan">Taiwan</a>
+      <a href="https://restaurantguru.com/Turkey">Turquía</a>
+      <a href="https://restaurantguru.com/Vietnam">Vietname</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Copyright © 2026, Restaurant Guru</div>
+      <div class="footer-bottom-links">
+        <a href="https://restaurantguru.com.br/contactus">Entre em contato</a>
+        <a href="https://restaurantguru.com.br/request_content_removal">Remoção de conteúdo</a>
+        <a href="https://restaurantguru.com.br/aboutus">Sobre nós</a>
+        <a href="https://restaurantguru.com.br/privacy_policy">Privacidade</a>
+        <a href="https://restaurantguru.com.br/disclaimer">Isenção</a>
+        <a href="https://restaurantguru.com/tutorial">Ajuda</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
